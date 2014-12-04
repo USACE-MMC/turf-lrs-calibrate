@@ -6,13 +6,28 @@ I'm borrowing the turf name here because I'm building out my linear referencing 
 Calibrates a linestring by adding an M coordinate to the coordinate array and a dimArray property of `['x',
 'y','m']` to describe the values stored in the coordinate array.
 
+###Parameters
+
+|name|description|
+|---|---|
+|linestring|linestring feature|
+|units|'feet', 'miles' , 'meters' or 'kilometers'|
+
+###Usage
+
 ```js
+calibrate(linestring, units)
+```
+
+###Example
+
+```javascript
 var linestring = require('turf-linestring')
 var calibrate = require('turf-lrs-calibrate')
 
 var basicLinestring = linestring([[102.0, -10.0], [103.0, 1.0], [104.0, 0.0], [130.0, 4.0]], {name: 'line 1', distance: 145})
 
-var calibratedLinestring = calibrate(basicLinestring)
+var calibratedLinestring = calibrate(basicLinestring,'miles')
   
 console.log(calibratedLinestring)
 ```
