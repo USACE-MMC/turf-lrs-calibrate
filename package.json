@@ -1,0 +1,19 @@
+{
+  "name": "turf-lrs-calibrate",
+  "version": "0.1.0",
+  "description": "calibrate a linestring for use in linear referencing",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test.js"
+  },
+  "author": "willbreitkreutz",
+  "license": "MIT",
+  "devDependencies": {
+    "tape": "^3.0.3",
+    "turf-linestring": "^0.1.1"
+  },
+  "dependencies": {
+    "turf-distance": "^0.1.5",
+    "turf-point": "^0.1.6"
+  }
+}
