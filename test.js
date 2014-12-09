@@ -13,7 +13,7 @@ test('calibrate', function(t){
   t.ok(calibLine);
   t.equal(calibLine.geometry.coordinates[0][0], 5);
   t.equal(calibLine.geometry.coordinates[1][1], 40);
-  t.equal(calibLine.geometry.coordinates[1][2], 2268.77808190803);
+  t.equal(calibLine.geometry.coordinates[1][3], 2268.77808190803);
   t.equal(calibLine.properties.name, 'test line');
   console.log(calibLine);
   t.end();
