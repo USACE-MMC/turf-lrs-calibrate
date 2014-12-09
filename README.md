@@ -1,10 +1,11 @@
 turf-lrs-calibrate
 ===============
 
-I'm borrowing the turf name here because I'm building out my linear referencing functionality `turf-lrs` to work seamlessly with the [turf.js](http://turfjs.org/) ecosystem.
+I'm borrowing the turf name here because I'm building out linear referencing functionality `turf-lrs` to work seamlessly with the [turf.js](http://turfjs.org/) ecosystem.
 
-Calibrates a linestring by adding an M coordinate to the coordinate array and a dimArray property of `['x',
-'y','m']` to describe the values stored in the coordinate array.
+Calibrates a linestring by adding an M coordinate to the coordinate array and a dimArray property of `['x','y','z','m']` to describe the values stored in the coordinate array.
+
+See the [geojson spec](http://geojson.org/geojson-spec.html#positions) for more information on Positions and the index of values within Positions
 
 ###Parameters
 

@@ -9,7 +9,8 @@ module.exports = function(linestring, units){
 		oldCoords = linestring.geometry.coordinates || [],
 		newCoords = [],
 		point1,
-		point2;
+		point2,
+		zvalue;
 
 	//units can be of feet, miles, meters or kilometers, we get the distance in miles or kilometers
 	//then have to convert if needed
@@ -23,8 +24,10 @@ module.exports = function(linestring, units){
 		cumulativeDistance = point2 ? cumulativeDistance + distance(point2, point1, dunits) : 0;
 
 		cumulativeDistanceConverted = cumulativeDistance * conversion;
+
+		zvalue = coord[2] || null;
 		
-		newCoords.push([point1.geometry.coordinates[0],point1.geometry.coordinates[1],cumulativeDistanceConverted]);
+		newCoords.push([point1.geometry.coordinates[0],point1.geometry.coordinates[1],zvalue,cumulativeDistanceConverted]);
 		
 		point2 = point1;
 
@@ -32,7 +35,7 @@ module.exports = function(linestring, units){
 
 	linestring.geometry.coordinates = newCoords;
 
-	linestring.properties.dimArray = ['x','y','m'];
+	linestring.properties.dimArray = ['x','y','z','m'];
 
 	return linestring;
 
